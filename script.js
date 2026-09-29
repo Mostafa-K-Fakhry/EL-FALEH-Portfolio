@@ -4,12 +4,13 @@
 
 
 /* =========================================================
-   SECTION INDEX — 5 SECTIONS (starts from Origin)
+   SECTION INDEX — 6 SECTIONS (starts from Origin)
    01 = Origin
    02 = Arsenal
    03 = Missions
    04 = Training
-   05 = CV / Contact
+   05 = CV
+   06 = Contact
    ========================================================= */
 
 const sections = document.querySelectorAll("main > section");
@@ -22,7 +23,7 @@ const sectionMap = {
     "missions": 2,
     "training": 3,
     "cv":       4,
-    "contact":  4
+    "contact":  5
 };
 
 /* Ignore non-mapped sections (method, etc.) */

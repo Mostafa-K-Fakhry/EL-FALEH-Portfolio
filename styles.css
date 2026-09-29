@@ -1216,7 +1216,7 @@ img {
 .project-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .case-stamp {
@@ -1410,6 +1410,7 @@ img {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
+    margin-top: 65px;
 }
 
 
@@ -2307,18 +2308,18 @@ footer {
     .hero-profile {
         right: 20px;
         bottom: 28px;
-        width: 145px;
-        height: 205px;
-        opacity: .58;
+        width: 190px;
+        height: 270px;
+        opacity: .85;
     }
 
     .hero-profile-label {
-        display: none;
+        display: flex;
     }
 
     .hero-profile-frame::before,
     .hero-profile-frame::after {
-        display: none;
+        display: block;
     }
 
     .section-dark {
