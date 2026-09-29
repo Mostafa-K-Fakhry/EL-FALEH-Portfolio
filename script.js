@@ -4,26 +4,25 @@
 
 
 /* =========================================================
-   SECTION INDEX — 6 SECTIONS
-   01 = Home (hero)
-   02 = Origin
-   03 = Arsenal
-   04 = Missions
-   05 = Training
-   06 = CV / Contact
+   SECTION INDEX — 5 SECTIONS (starts from Origin)
+   01 = Origin
+   02 = Arsenal
+   03 = Missions
+   04 = Training
+   05 = CV / Contact
    ========================================================= */
 
 const sections = document.querySelectorAll("main > section");
 const indexItems = document.querySelectorAll(".side-index .index-item");
 
 const sectionMap = {
-    "home":     0,
-    "origin":   1,
-    "arsenal":  2,
-    "missions": 3,
-    "training": 4,
-    "cv":       5,
-    "contact":  5
+    "home":     -1,
+    "origin":   0,
+    "arsenal":  1,
+    "missions": 2,
+    "training": 3,
+    "cv":       4,
+    "contact":  4
 };
 
 /* Ignore non-mapped sections (method, etc.) */
