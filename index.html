@@ -8,7 +8,7 @@
 
     <meta
       name="description"
-      content="Mahmoud  El-Faleh — Flutter Mobile Developer building real mobile applications and solving real problems."
+      content="Mahmoud El-Faleh — Flutter Mobile Developer building real mobile applications and solving real problems."
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,13 +46,19 @@
       </a>
 
       <nav class="main-nav">
-        <a href="#home">ORIGIN</a>
+        <a href="#home">HOME</a>
+        <a href="#origin">ORIGIN</a>
         <a href="#arsenal">ARSENAL</a>
         <a href="#missions">MISSIONS</a>
         <a href="#training">TRAINING</a>
         <a href="#cv">CV</a>
-        <a href="#contact">CONTACT</a>
       </nav>
+
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
       <a href="#contact" class="hire-button">
         <span></span>
@@ -93,7 +99,7 @@
 
     <main>
       <!-- =========================================================
-     HERO / ORIGIN
+     SECTION 01 — HERO / HOME
 ========================================================= -->
 
       <section class="hero" id="home">
@@ -146,7 +152,7 @@
               <span>→</span>
             </a>
 
-            <a href="#cv" class="btn btn-outline">
+            <a href="assets/CV.pdf" download class="btn btn-outline">
               <span>↓</span>
               DOWNLOAD CV
             </a>
@@ -177,7 +183,7 @@
       </section>
 
       <!-- =========================================================
-     ORIGIN
+     SECTION 02 — ORIGIN
 ========================================================= -->
 
       <section class="origin section-dark" id="origin">
@@ -188,7 +194,7 @@
 
         <div class="origin-grid">
           <div class="origin-title">
-            <h3>
+            <h3 class="section-heading">
               FROM A STUDENT<br />
               TO A <span>BUILDER.</span>
             </h3>
@@ -229,7 +235,7 @@
       </section>
 
       <!-- =========================================================
-     ARSENAL
+     SECTION 03 — ARSENAL
 ========================================================= -->
 
       <section class="arsenal section-dark" id="arsenal">
@@ -237,6 +243,10 @@
           <span></span>
           02. MY ARSENAL (TOOLS)
         </div>
+
+        <h3 class="section-heading arsenal-heading">
+          THE TOOLS I <span>USE.</span>
+        </h3>
 
         <div class="arsenal-grid">
           <!-- Flutter -->
@@ -314,11 +324,7 @@
       </section>
 
       <!-- =========================================================
-     MISSIONS
-========================================================= -->
-
-      <!-- =========================================================
-     PROJECTS / CASE FILES
+     SECTION 04 — MISSIONS / PROJECTS
 ========================================================= -->
 
       <section id="missions" class="projects-section">
@@ -328,7 +334,7 @@
             PROJECTS / CASE FILES
           </div>
 
-          <h2>
+          <h2 class="section-heading">
             REAL APPS.
             <span>REAL PROBLEMS.</span>
           </h2>
@@ -537,11 +543,7 @@
       </section>
 
       <!-- =========================================================
-     TRAINING
-========================================================= -->
-
-      <!-- =========================================================
-     TRAINING
+     SECTION 05 — TRAINING
 ========================================================= -->
 
       <section id="training" class="training-section">
@@ -551,7 +553,7 @@
           <div class="section-title-wrap">
             <span class="section-kicker"> THE TRAINING </span>
 
-            <h2 class="section-title">
+            <h2 class="section-heading">
               BUILT THROUGH
               <span>HANDS-ON TRAINING.</span>
             </h2>
@@ -696,7 +698,7 @@
       </section>
 
       <!-- =========================================================
-     CV
+     SECTION 06 — CV
 ========================================================= -->
 
       <section class="cv section-dark" id="cv">
@@ -705,21 +707,22 @@
           05. THE DOSSIER
         </div>
 
-        <h3 class="giant-title">
+        <h3 class="section-heading">
           MY <span>CV.</span><br />
           THE FULL STORY.
         </h3>
 
         <div class="cv-layout">
           <div class="cv-main">
-            <div class="cv-name">MAHMOUD EL-FALEH</div>
+            <div class="cv-name">MAHMOUD SALAH ELFALEH MOHAMED</div>
 
             <h4>FLUTTER MOBILE DEVELOPER</h4>
 
             <p>
-              Computer Science student and Flutter developer focused on building
-              high-quality mobile applications with clean architecture,
-              real-world functionality and excellent UX.
+              Computer Science and Artificial Intelligence student specializing in
+              Flutter and mobile application development. Hands-on experience with
+              Flutter, Dart, REST APIs, Dio, Cubit, Clean Architecture, and Firebase
+              through training and independent mobile projects.
             </p>
 
             <div class="cv-skills">
@@ -754,18 +757,19 @@
               </div>
             </div>
 
-            <a href="#" class="btn btn-red cv-button"> DOWNLOAD FULL CV ↓ </a>
+            <a href="assets/CV.pdf" download class="btn btn-red cv-button"> DOWNLOAD FULL CV ↓ </a>
           </div>
 
           <div class="cv-sidebar">
             <div class="cv-box">
               <small>EDUCATION</small>
 
-              <h5>ASSIUT UNIVERSITY</h5>
+              <h5>ASSIUT NATIONAL UNIVERSITY</h5>
 
               <p>
-                Bachelor's Degree<br />
-                Software Engineering
+                B.Sc. in Computer Science<br />
+                and Artificial Intelligence<br />
+                Expected 2027
               </p>
             </div>
 
@@ -794,7 +798,7 @@
 
       <section class="method">
         <div class="method-inner">
-          <div class="quote-mark">“</div>
+          <div class="quote-mark">"</div>
 
           <p>THE METHOD IS SIMPLE:</p>
 
@@ -826,17 +830,17 @@
           <p>Send the problem. I'll figure out the system.</p>
 
           <div class="contact-actions">
-            <a href="mailto:YOUR_EMAIL@gmail.com" class="contact-btn red">
+            <a href="mailto:mahmoudselfaleh@gmail.com" class="contact-btn red">
               EMAIL ME ↗
             </a>
 
-            <a href="https://wa.me/" class="contact-btn green"> WHATSAPP ↗ </a>
+            <a href="https://wa.me/2001028935376" class="contact-btn green"> WHATSAPP ↗ </a>
 
-            <a href="#" class="contact-btn blue"> LINKEDIN ↗ </a>
+            <a href="https://github.com/mahmoudelfaleh14" target="_blank" rel="noopener" class="contact-btn blue"> GITHUB ↗ </a>
           </div>
 
           <div class="contact-details">
-            YOUR_EMAIL@gmail.com · +20 XXX XXX XXXX · ASSIUT, EGYPT
+            mahmoudselfaleh@gmail.com · +20 102 893 5376 · SOHAG, EGYPT
           </div>
         </div>
       </section>
