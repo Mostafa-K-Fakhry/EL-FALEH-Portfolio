@@ -1,0 +1,3815 @@
+/* =========================================================
+   PUNISHER PORTFOLIO
+   VISUAL SYSTEM
+========================================================= */
+
+:root {
+
+    --black: #050505;
+    --black-2: #090909;
+    --black-3: #111111;
+
+    --white: #e9e7df;
+    --white-soft: #bdbbb4;
+
+    --red: #e50914;
+    --red-dark: #9d050b;
+
+    --line: rgba(235,235,230,.28);
+
+    --font-display: "Barlow Condensed", sans-serif;
+    --font-mono: "Space Mono", monospace;
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    background: var(--black);
+
+    color: var(--white);
+
+    font-family: var(--font-mono);
+
+    overflow-x: hidden;
+
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+
+/* =========================================================
+   GRAIN
+========================================================= */
+
+.noise {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    opacity: .075;
+
+    background-image:
+        url("https://grainy-gradients.vercel.app/noise.svg");
+
+    mix-blend-mode: screen;
+
+}
+
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 88px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 7.5vw;
+
+    z-index: 1000;
+
+    background:
+
+        linear-gradient(
+            rgba(5,5,5,.91),
+            rgba(5,5,5,.78)
+        );
+
+    border-bottom: 1px solid var(--line);
+
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.brand-skull {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 35px;
+
+    filter:
+        grayscale(1)
+        contrast(1.4);
+
+}
+
+
+.brand-name {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.brand-name strong {
+
+    font-family: var(--font-display);
+
+    font-size: 29px;
+
+    letter-spacing: 1px;
+
+    line-height: .8;
+
+}
+
+
+.brand-name strong span {
+    color: var(--red);
+}
+
+
+.brand-name small {
+
+    margin-top: 9px;
+
+    font-size: 8px;
+
+    letter-spacing: 5px;
+
+    color: #a4a29c;
+
+}
+
+
+.main-nav {
+
+    display: flex;
+
+    gap: 38px;
+
+}
+
+
+.main-nav a {
+
+    position: relative;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: #aaa9a3;
+
+    transition: .25s ease;
+
+}
+
+
+.main-nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -10px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--red);
+
+    transition: .25s ease;
+
+}
+
+
+.main-nav a:hover {
+
+    color: white;
+
+}
+
+
+.main-nav a:hover::after {
+
+    width: 100%;
+
+}
+
+
+.hire-button {
+
+    height: 48px;
+
+    min-width: 145px;
+
+    border: 1px solid rgba(240,240,240,.55);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    position: relative;
+
+}
+
+
+.hire-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -5px;
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    pointer-events: none;
+
+}
+
+
+.hire-button span {
+
+    width: 6px;
+    height: 6px;
+
+    background: var(--red);
+
+    border-radius: 50%;
+
+}
+
+
+.hire-button b {
+
+    color: var(--red);
+
+    margin-left: 8px;
+
+}
+
+
+
+/* =========================================================
+   SIDE INDEX
+========================================================= */
+
+.side-index {
+
+    position: fixed;
+
+    left: 34px;
+
+    top: 220px;
+
+    z-index: 500;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+
+}
+
+
+.index-item {
+
+    position: relative;
+
+    color: #4d4d4d;
+
+    font-size: 12px;
+
+    height: 20px;
+
+    padding-left: 4px;
+
+}
+
+
+.index-item.active {
+
+    color: white;
+
+}
+
+
+.index-item.active::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -2px;
+
+    top: 0;
+
+    height: 20px;
+
+    width: 2px;
+
+    background: var(--red);
+
+}
+
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    height: 760px;
+
+    overflow: hidden;
+
+    background: #030303;
+
+}
+
+
+.hero-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        url("assets/punisher-hero.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter:
+        grayscale(.35)
+        contrast(1.12)
+        brightness(.52);
+
+    transform: scale(1.02);
+
+}
+
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.96) 0%,
+            rgba(0,0,0,.83) 27%,
+            rgba(0,0,0,.30) 57%,
+            rgba(0,0,0,.10) 100%
+        ),
+
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.95) 0%,
+            transparent 28%,
+            rgba(0,0,0,.2) 100%
+        );
+
+}
+
+
+.hero-content {
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 9.3vw;
+
+    top: 50%;
+
+    transform: translateY(-38%);
+
+    width: 590px;
+
+}
+
+
+.eyebrow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color: #dddcd6;
+
+    margin-bottom: 13px;
+
+}
+
+
+.eyebrow span {
+
+    width: 21px;
+
+    height: 2px;
+
+    background: var(--red);
+
+}
+
+
+.hero h1 {
+
+    font-family: var(--font-display);
+
+    text-transform: uppercase;
+
+    font-weight: 900;
+
+    font-size: clamp(75px, 7.4vw, 135px);
+
+    line-height: .78;
+
+    letter-spacing: -2px;
+
+    margin-left: -5px;
+
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+}
+
+
+.hero h1 .white {
+
+    color: var(--white);
+
+    text-shadow:
+        4px 4px 0 #000,
+        -1px -1px 0 #000;
+
+}
+
+
+.hero h1 .red {
+
+    color: var(--red);
+
+    text-shadow:
+        5px 5px 0 #080808,
+        -1px -1px 0 #080808;
+
+}
+
+
+.hero h2 {
+
+    margin-top: 34px;
+
+    font-family: var(--font-mono);
+
+    font-size: 23px;
+
+    line-height: 1.55;
+
+    letter-spacing: 5px;
+
+    font-weight: 700;
+
+}
+
+
+.hero h2 span {
+
+    color: var(--red);
+
+}
+
+
+.hero-description {
+
+    max-width: 570px;
+
+    margin-top: 24px;
+
+    color: #aaa9a3;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+}
+
+
+.hero-actions {
+
+    display: flex;
+
+    gap: 16px;
+
+    margin-top: 28px;
+
+}
+
+
+.btn {
+
+    height: 55px;
+
+    padding: 0 27px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition: .25s ease;
+
+}
+
+
+.btn-red {
+
+    background: var(--red);
+
+    border: 1px solid var(--red);
+
+    color: white;
+
+}
+
+
+.btn-red:hover {
+
+    background: #b7070e;
+
+    transform: translateY(-2px);
+
+}
+
+
+.btn-outline {
+
+    border: 1px solid #777;
+
+    color: white;
+
+    background: rgba(0,0,0,.25);
+
+}
+
+
+.btn-outline:hover {
+
+    border-color: white;
+
+}
+
+
+
+/* =========================================================
+   HERO HANDWRITING
+========================================================= */
+
+.hero-note {
+
+    position: absolute;
+
+    right: 9vw;
+
+    bottom: 110px;
+
+    z-index: 5;
+
+    transform: rotate(-7deg);
+
+}
+
+
+.note-line {
+
+    width: 150px;
+
+    height: 3px;
+
+    background: var(--red);
+
+    transform: rotate(-5deg);
+
+    margin-left: 80px;
+
+}
+
+
+.note-text {
+
+    margin-top: 15px;
+
+    font-family: "Comic Sans MS", cursive;
+
+    font-size: 28px;
+
+    line-height: 1.25;
+
+    color: #b9b7b1;
+
+    text-shadow: 2px 2px #000;
+
+}
+
+
+.note-arrow {
+
+    color: var(--red);
+
+    font-size: 70px;
+
+    transform: rotate(12deg);
+
+    margin-left: 100px;
+
+}
+
+
+
+/* =========================================================
+   HERO WEAPON
+========================================================= */
+
+.hero-weapon {
+
+    position: absolute;
+
+    right: -30px;
+
+    bottom: -20px;
+
+    width: 370px;
+
+    height: 190px;
+
+    opacity: .9;
+
+}
+
+
+.weapon-metal {
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 50px;
+
+    right: 0;
+
+    bottom: 50px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #111,
+            #555,
+            #171717,
+            #777,
+            #111
+        );
+
+    transform: rotate(-7deg);
+
+    box-shadow:
+        0 10px 30px #000;
+
+}
+
+
+.weapon-body {
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 100px;
+
+    right: 100px;
+
+    bottom: 0;
+
+    background: #080808;
+
+    border-top: 2px solid #777;
+
+    transform: skew(-20deg);
+
+}
+
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.section-dark {
+
+    position: relative;
+
+    padding: 95px 7vw;
+
+    background:
+
+        linear-gradient(
+            rgba(4,4,4,.96),
+            rgba(4,4,4,.96)
+        ),
+
+        url("assets/punisher-hero.png");
+
+    background-size: cover;
+
+    background-attachment: fixed;
+
+}
+
+
+.section-label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #b7b5af;
+
+    margin-bottom: 35px;
+
+}
+
+
+.section-label span {
+
+    width: 25px;
+
+    height: 2px;
+
+    background: var(--red);
+
+}
+
+
+
+/* =========================================================
+   ORIGIN
+========================================================= */
+
+.origin {
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.origin-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.45fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+.origin-title h3 {
+
+    font-family: var(--font-display);
+
+    font-size: clamp(55px, 5vw, 86px);
+
+    line-height: .82;
+
+    font-weight: 900;
+
+}
+
+
+.origin-title h3 span {
+
+    color: var(--red);
+
+}
+
+
+.origin-title p {
+
+    margin-top: 25px;
+
+    max-width: 500px;
+
+    font-family: Arial, sans-serif;
+
+    color: #9f9e98;
+
+    line-height: 1.6;
+
+}
+
+
+.stats {
+
+    border: 1px solid var(--line);
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr) 1.2fr;
+
+    min-height: 155px;
+
+}
+
+
+.stat {
+
+    padding: 35px 28px;
+
+    border-right: 1px solid var(--line);
+
+}
+
+
+.stat strong {
+
+    display: block;
+
+    font-family: var(--font-display);
+
+    font-size: 52px;
+
+    font-weight: 700;
+
+}
+
+
+.stat span {
+
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #9d9b95;
+
+}
+
+
+.origin-quote {
+
+    padding: 30px;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    line-height: 1.7;
+
+    color: #bdbbb4;
+
+}
+
+
+.origin-quote i {
+
+    display: block;
+
+    width: 30px;
+
+    height: 2px;
+
+    background: var(--red);
+
+    margin-top: 12px;
+
+}
+
+
+
+/* =========================================================
+   ARSENAL
+========================================================= */
+
+.arsenal {
+
+    padding-top: 65px;
+
+}
+
+
+.arsenal-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 14px;
+
+}
+
+
+.tool-card {
+
+    border: 1px solid rgba(255,255,255,.27);
+
+    background: rgba(10,10,10,.82);
+
+    min-height: 300px;
+
+    transition: .3s ease;
+
+}
+
+
+.tool-card:hover {
+
+    border-color: rgba(229,9,20,.8);
+
+    transform: translateY(-5px);
+
+}
+
+
+.tool-image {
+
+    height: 145px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background-color: #111;
+
+}
+
+
+.tool-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 30%,
+            rgba(255,255,255,.07),
+            transparent 70%
+        );
+
+}
+
+
+.flutter-image {
+
+    background:
+        linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+        url("assets/Flutter.png");
+
+    background-size: cover;
+
+}
+
+
+.dart-image {
+
+    background:
+        linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+        url("assets/Dart.png");
+
+    background-size: cover;
+
+    background-position: 70%;
+}
+
+
+.firebase-image {
+
+    background:
+        linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+        url("assets/firebase.png");
+
+    background-size: cover;
+
+    background-position: 20%;
+}
+
+
+.ui-image {
+
+    background:
+        linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+        url("assets/UI\ UX.png");
+
+    background-size: cover;
+
+}
+
+
+.api-image {
+
+    background:
+        linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+        url("assets/APIs.png");
+
+    background-size: cover;
+
+}
+
+
+.tools-image {
+
+    background:
+        linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+        url("assets/Tools.png");
+
+    background-size: cover;
+
+}
+
+
+.tool-logo,
+.api-symbol,
+.tools-symbol {
+
+    position: absolute;
+
+    left: 20px;
+
+    bottom: 17px;
+
+    width: 55px;
+
+    height: 55px;
+
+    background: #0a0a0a;
+
+    border: 1px solid #aaa;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: var(--font-display);
+
+    font-size: 27px;
+
+    font-weight: 900;
+
+    z-index: 2;
+
+}
+
+
+.tool-content {
+
+    padding: 20px;
+
+}
+
+
+.tool-content h4 {
+
+    font-family: var(--font-display);
+
+    font-size: 25px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.tool-content p {
+
+    margin-top: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #9b9993;
+
+}
+
+
+
+/* =========================================================
+   MISSIONS
+========================================================= */
+
+.missions {
+
+    background: #070707;
+
+    padding: 115px 7vw;
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.mission-header {
+
+    margin-bottom: 65px;
+
+}
+
+
+.red-label {
+
+    color: var(--red);
+
+}
+
+
+.mission-header h3 {
+
+    font-family: var(--font-display);
+
+    font-size: clamp(70px, 8vw, 135px);
+
+    line-height: .78;
+
+    font-weight: 900;
+
+}
+
+
+.mission-header h3 span {
+
+    color: var(--red);
+
+}
+
+
+.mission-card {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr .8fr;
+
+    min-height: 460px;
+
+    border: 1px solid rgba(255,255,255,.23);
+
+    margin-bottom: 50px;
+
+    overflow: hidden;
+
+}
+
+
+.mission-card.reverse {
+
+    grid-template-columns: .8fr 1.2fr;
+
+}
+
+
+.mission-number {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 20px;
+
+    z-index: 5;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    background: #080808;
+
+    border: 1px solid #888;
+
+    padding: 8px 12px;
+
+}
+
+
+.mission-visual {
+
+    min-height: 460px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.mission-one {
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,.25),
+            rgba(0,0,0,.5)
+        ),
+
+        url("assets/punisher-hero.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+.mission-two {
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,.25),
+            rgba(0,0,0,.5)
+        ),
+
+        url("assets/punisher-hero.png");
+
+    background-size: cover;
+
+    background-position: 70% center;
+
+}
+
+
+.mission-stamp {
+
+    position: absolute;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    padding: 10px 15px;
+
+    border: 1px solid rgba(255,255,255,.6);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.mission-info {
+
+    padding: 75px 55px;
+
+    background: #0c0c0c;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.mission-tag {
+
+    color: var(--red);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.mission-info h4 {
+
+    font-family: var(--font-display);
+
+    font-size: 70px;
+
+    line-height: .8;
+
+}
+
+
+.mission-info p {
+
+    max-width: 470px;
+
+    color: #999;
+
+    font-family: Arial, sans-serif;
+
+    line-height: 1.7;
+
+    margin-top: 24px;
+
+}
+
+
+.mission-stack {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+}
+
+
+.mission-stack span {
+
+    border: 1px solid #555;
+
+    padding: 7px 10px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.mission-link {
+
+    margin-top: 30px;
+
+    color: white;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.mission-link:hover {
+
+    color: var(--red);
+
+}
+
+
+
+/* =========================================================
+   TRAINING
+========================================================= */
+
+.training {
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.giant-title {
+
+    font-family: var(--font-display);
+
+    font-size: clamp(75px, 8vw, 145px);
+
+    line-height: .78;
+
+    font-weight: 900;
+
+}
+
+
+.giant-title span {
+
+    color: var(--red);
+
+}
+
+
+.training-grid {
+
+    margin-top: 65px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 20px;
+
+}
+
+
+.training-card {
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    padding: 35px;
+
+    min-height: 310px;
+
+    background: #0a0a0a;
+
+    position: relative;
+
+}
+
+
+.training-top {
+
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    background: var(--red);
+
+    color: white;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.training-card small {
+
+    display: block;
+
+    color: var(--red);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.training-card h4 {
+
+    font-family: var(--font-display);
+
+    font-size: 45px;
+
+    margin-top: 8px;
+
+}
+
+
+.training-card p {
+
+    color: #999;
+
+    font-family: Arial, sans-serif;
+
+    line-height: 1.6;
+
+    margin-top: 15px;
+
+}
+
+
+.training-meta {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 35px;
+
+    right: 35px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top: 1px solid #444;
+
+    padding-top: 14px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+
+/* =========================================================
+   CV
+========================================================= */
+
+.cv {
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.cv-layout {
+
+    margin-top: 65px;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr .7fr;
+
+    gap: 25px;
+
+}
+
+
+.cv-main {
+
+    border: 1px solid #555;
+
+    padding: 45px;
+
+    background: #0a0a0a;
+
+}
+
+
+.cv-name {
+
+    display: inline-block;
+
+    padding: 8px 13px;
+
+    background: white;
+
+    color: black;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.cv-main h4 {
+
+    font-family: var(--font-display);
+
+    font-size: 70px;
+
+    line-height: .8;
+
+    margin-top: 25px;
+
+}
+
+
+.cv-main > p {
+
+    margin-top: 20px;
+
+    max-width: 800px;
+
+    color: #aaa;
+
+    line-height: 1.7;
+
+    font-family: Arial, sans-serif;
+
+}
+
+
+.cv-skills {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 35px;
+
+}
+
+
+.cv-skills div {
+
+    border: 1px solid #555;
+
+    padding: 17px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.cv-skills span {
+
+    color: var(--red);
+
+    margin-right: 12px;
+
+}
+
+
+.cv-button {
+
+    margin-top: 35px;
+
+}
+
+
+.cv-sidebar {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+
+.cv-box {
+
+    border: 1px solid #555;
+
+    padding: 27px;
+
+    background: #090909;
+
+    flex: 1;
+
+}
+
+
+.cv-box small {
+
+    color: var(--red);
+
+    letter-spacing: 3px;
+
+    font-size: 9px;
+
+}
+
+
+.cv-box h5 {
+
+    font-family: var(--font-display);
+
+    font-size: 32px;
+
+    margin-top: 15px;
+
+    line-height: .9;
+
+}
+
+
+.cv-box p {
+
+    color: #888;
+
+    margin-top: 10px;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+}
+
+
+
+/* =========================================================
+   METHOD
+========================================================= */
+
+.method {
+
+    min-height: 350px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            rgba(125,0,0,.65),
+            rgba(125,0,0,.65)
+        ),
+
+        url("assets/punisher-hero.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    border-top: 1px solid #333;
+
+    border-bottom: 1px solid #333;
+
+}
+
+
+.method-inner {
+
+    position: relative;
+
+}
+
+
+.quote-mark {
+
+    position: absolute;
+
+    font-family: Georgia, serif;
+
+    font-size: 200px;
+
+    color: rgba(0,0,0,.2);
+
+    top: -110px;
+
+    left: -120px;
+
+}
+
+
+.method p {
+
+    font-size: 15px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.method h3 {
+
+    font-family: var(--font-display);
+
+    font-size: clamp(45px, 5vw, 80px);
+
+    line-height: .85;
+
+    margin-top: 12px;
+
+    text-shadow: 4px 4px #000;
+
+}
+
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+
+    min-height: 700px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #050505;
+
+}
+
+
+.contact-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,.90),
+            rgba(0,0,0,.93)
+        ),
+
+        url("assets/punisher-hero.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter: grayscale(.4);
+
+}
+
+
+.contact-inner {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    width: 90%;
+
+}
+
+
+.contact-label {
+
+    justify-content: center;
+
+}
+
+
+.contact h3 {
+
+    font-family: var(--font-display);
+
+    font-size: clamp(80px, 11vw, 170px);
+
+    line-height: .75;
+
+    font-weight: 900;
+
+}
+
+
+.contact h3 span {
+
+    color: var(--red);
+
+}
+
+
+.contact-inner > p {
+
+    margin-top: 30px;
+
+    color: #aaa;
+
+}
+
+
+.contact-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 40px;
+
+}
+
+
+.contact-btn {
+
+    padding: 18px 28px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    border: 1px solid white;
+
+}
+
+
+.contact-btn.red {
+
+    background: var(--red);
+
+    border-color: var(--red);
+
+}
+
+
+.contact-btn.green {
+
+    background: #1da95c;
+
+    border-color: #1da95c;
+
+}
+
+
+.contact-btn.blue {
+
+    background: #0878c9;
+
+    border-color: #0878c9;
+
+}
+
+
+.contact-details {
+
+    margin-top: 55px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #74736e;
+
+}
+
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    height: 70px;
+
+    background: #020202;
+
+    border-top: 1px solid #333;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 7vw;
+
+    color: #555;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .main-nav {
+        gap: 20px;
+    }
+
+    .hero-content {
+        left: 8vw;
+    }
+
+    .hero-note {
+        right: 5vw;
+    }
+
+    .arsenal-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .site-header {
+        padding: 0 25px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .side-index {
+        display: none;
+    }
+
+    .hero {
+
+        min-height: 850px;
+
+    }
+
+    .hero-content {
+
+        left: 7vw;
+
+        width: 86%;
+
+        top: 53%;
+
+    }
+
+    .hero-background {
+
+        background-position: 62% center;
+
+    }
+
+    .hero-overlay {
+
+        background:
+
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,.95),
+                rgba(0,0,0,.7)
+            );
+
+    }
+
+    .hero-note {
+        display: none;
+    }
+
+    .hero-weapon {
+        display: none;
+    }
+
+    .origin-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .stats {
+
+        grid-template-columns: repeat(2,1fr);
+
+    }
+
+    .origin-quote {
+        grid-column: span 2;
+    }
+
+    .mission-card,
+    .mission-card.reverse {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .mission-visual {
+
+        min-height: 300px;
+
+    }
+
+    .training-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .cv-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .site-header {
+
+        height: 72px;
+
+    }
+
+    .brand-name strong {
+
+        font-size: 24px;
+
+    }
+
+    .brand-skull {
+
+        font-size: 28px;
+
+    }
+
+    .hire-button {
+
+        min-width: 110px;
+
+        height: 42px;
+
+        font-size: 9px;
+
+    }
+
+    .hero {
+
+        height: 800px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 65px;
+
+        line-height: .82;
+
+    }
+
+    .hero h2 {
+
+        font-size: 15px;
+
+        letter-spacing: 2px;
+
+    }
+
+    .hero-description {
+
+        font-size: 13px;
+
+    }
+
+    .hero-actions {
+
+        flex-direction: column;
+
+        width: 210px;
+
+    }
+
+    .section-dark,
+    .missions {
+
+        padding-left: 25px;
+
+        padding-right: 25px;
+
+    }
+
+    .origin-title h3 {
+
+        font-size: 60px;
+
+    }
+
+    .stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .origin-quote {
+
+        grid-column: auto;
+
+    }
+
+    .arsenal-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .mission-info {
+
+        padding: 40px 25px;
+
+    }
+
+    .mission-info h4 {
+
+        font-size: 55px;
+
+    }
+
+    .giant-title {
+
+        font-size: 65px;
+
+    }
+
+    .cv-main {
+
+        padding: 25px;
+
+    }
+
+    .cv-main h4 {
+
+        font-size: 52px;
+
+    }
+
+    .cv-skills {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .contact h3 {
+
+        font-size: 80px;
+
+    }
+
+    .contact-actions {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+    footer {
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        height: 100px;
+
+    }
+
+}
+
+/* =========================================================
+   FINAL PUNISHER HERO OVERRIDE
+   Reference-matched cinematic version
+========================================================= */
+
+:root {
+    --punisher-red: #e50914;
+    --punisher-white: #eeeae0;
+    --punisher-black: #030303;
+}
+
+
+/* =========================================================
+   HEADER — TRANSPARENT / CINEMATIC
+========================================================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 88px;
+
+    padding: 0 7.5vw;
+
+    z-index: 1000;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, .68) 0%,
+            rgba(0, 0, 0, .38) 55%,
+            rgba(0, 0, 0, 0) 100%
+        ) !important;
+
+    border-bottom: 1px solid rgba(255,255,255,.14) !important;
+
+    backdrop-filter: blur(1.5px) !important;
+    -webkit-backdrop-filter: blur(1.5px) !important;
+
+    transition:
+        background .35s ease,
+        backdrop-filter .35s ease,
+        border-color .35s ease;
+}
+
+
+/* When JS adds .scrolled */
+
+.site-header.scrolled {
+    background:
+        rgba(3,3,3,.88) !important;
+
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+
+    border-bottom-color: rgba(255,255,255,.20) !important;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+    gap: 14px;
+}
+
+.brand-skull {
+    width: 48px;
+    height: 48px;
+
+    overflow: hidden;
+
+    background: transparent !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-skull img {
+    width: 43px;
+    height: 43px;
+
+    object-fit: contain;
+
+    /*
+       Your current skull PNG has a white background.
+       Invert it so:
+       white background -> black
+       black skull -> white
+    */
+
+    filter:
+        invert(1)
+        grayscale(1)
+        contrast(1.45)
+        brightness(1.1);
+
+    mix-blend-mode: screen;
+
+    opacity: .94;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.main-nav {
+    gap: 38px;
+}
+
+.main-nav a {
+    color: rgba(238,235,226,.78) !important;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2.7px;
+
+    transition:
+        color .25s ease,
+        opacity .25s ease;
+}
+
+.main-nav a:hover {
+    color: #fff !important;
+}
+
+
+/* =========================================================
+   HIRE BUTTON
+========================================================= */
+
+.hire-button {
+    height: 50px;
+    min-width: 150px;
+
+    background: rgba(0,0,0,.18);
+
+    border: 1px solid rgba(238,238,238,.52) !important;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.025);
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+}
+
+.hire-button:hover {
+    background: rgba(0,0,0,.45);
+    border-color: rgba(255,255,255,.85) !important;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    height: 100vh;
+    min-height: 760px;
+
+    overflow: hidden;
+
+    background: #020202;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-background {
+    position: absolute;
+
+    inset: -2%;
+
+    z-index: -3;
+
+    background-image:
+        url("assets/punisher-hero.png") !important;
+
+    background-size: cover !important;
+
+    /*
+       This is important.
+       Keep the skull on the right side,
+       while leaving enough dark negative space
+       for the typography.
+    */
+
+    background-position:
+        center center !important;
+
+    background-repeat: no-repeat;
+
+    filter:
+        grayscale(.18)
+        contrast(1.17)
+        brightness(.78)
+        saturate(.82);
+
+    transform:
+        scale(1.035);
+
+    will-change: transform;
+
+    transition:
+        filter .5s ease;
+}
+
+
+/* =========================================================
+   CINEMATIC OVERLAY
+========================================================= */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    background:
+
+        /*
+         Main left-to-right cinematic gradient
+        */
+        linear-gradient(
+            90deg,
+
+            rgba(0,0,0,.93) 0%,
+            rgba(0,0,0,.83) 18%,
+            rgba(0,0,0,.55) 38%,
+            rgba(0,0,0,.18) 61%,
+            rgba(0,0,0,.28) 100%
+        ),
+
+        /*
+         Top shadow behind navbar
+        */
+        linear-gradient(
+            180deg,
+
+            rgba(0,0,0,.58) 0%,
+            rgba(0,0,0,.08) 23%,
+            rgba(0,0,0,.00) 55%,
+            rgba(0,0,0,.72) 100%
+        ),
+
+        /*
+         Very subtle red atmospheric tint
+        */
+        radial-gradient(
+            circle at 73% 43%,
+            rgba(125,0,0,.16),
+            transparent 34%
+        );
+
+    mix-blend-mode: normal;
+}
+
+
+/* =========================================================
+   EXTRA VIGNETTE
+========================================================= */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 42%,
+            rgba(0,0,0,.20) 68%,
+            rgba(0,0,0,.68) 100%
+        );
+
+    opacity: .75;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+    left: 9.2vw;
+
+    top: 51%;
+
+    width: min(590px, 42vw);
+
+    transform: translateY(-43%);
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+    gap: 14px;
+
+    margin-bottom: 17px;
+
+    font-size: 22px;
+
+    letter-spacing: 5px;
+
+    color: rgba(239,237,229,.88);
+}
+
+.eyebrow span {
+    width: 23px;
+    height: 2px;
+
+    background: var(--punisher-red);
+
+    box-shadow:
+        0 0 8px rgba(229,9,20,.25);
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.hero h1 {
+    margin-left: -4px;
+
+    font-size:
+        clamp(
+            82px,
+            7.2vw,
+            132px
+        );
+
+    line-height: .78;
+
+    letter-spacing: -2.8px;
+
+    font-weight: 900;
+
+    text-shadow:
+        3px 4px 0 rgba(0,0,0,.80);
+}
+
+.hero h1 .white {
+    color: var(--punisher-white);
+
+    text-shadow:
+        3px 4px 0 rgba(0,0,0,.90),
+        0 0 22px rgba(255,255,255,.04);
+}
+
+.hero h1 .red {
+    color: var(--punisher-red);
+
+    text-shadow:
+        4px 5px 0 rgba(0,0,0,.92),
+        0 0 20px rgba(229,9,20,.07);
+}
+
+
+/* =========================================================
+   HERO SUBTITLE
+========================================================= */
+
+.hero h2 {
+    margin-top: 32px;
+
+    font-size: 21px;
+
+    line-height: 1.58;
+
+    letter-spacing: 4px;
+
+    color: #eeeae0;
+
+    text-shadow:
+        2px 2px 0 rgba(0,0,0,.85);
+}
+
+.hero h2 span {
+    color: var(--punisher-red);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-description {
+    max-width: 565px;
+
+    margin-top: 23px;
+
+    color: rgba(210,208,201,.76);
+
+    font-size: 15px;
+
+    line-height: 1.72;
+
+    text-shadow:
+        1px 2px 5px rgba(0,0,0,.9);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-actions {
+    margin-top: 29px;
+
+    gap: 15px;
+}
+
+.btn {
+    height: 54px;
+
+    padding: 0 27px;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.btn-red {
+    background: var(--punisher-red);
+
+    border-color: var(--punisher-red);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.32);
+}
+
+.btn-red:hover {
+    background: #f20b16;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 28px rgba(0,0,0,.42);
+}
+
+.btn-outline {
+    background: rgba(0,0,0,.25);
+
+    border-color: rgba(235,235,235,.50);
+}
+
+.btn-outline:hover {
+    background: rgba(0,0,0,.48);
+
+    border-color: rgba(255,255,255,.85);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   RIGHT HANDWRITTEN NOTE
+========================================================= */
+
+.hero-note {
+    right: 10vw;
+
+    bottom: 145px;
+
+    z-index: 6;
+
+    opacity: .88;
+
+    transform:
+        rotate(-6deg)
+        scale(.96);
+
+    filter:
+        drop-shadow(0 4px 8px rgba(0,0,0,.85));
+}
+
+.note-line {
+    width: 145px;
+    height: 3px;
+
+    margin-left: 72px;
+
+    background: var(--punisher-red);
+}
+
+.note-text {
+    margin-top: 13px;
+
+    font-size: 27px;
+
+    line-height: 1.18;
+
+    color: rgba(208,205,196,.86);
+
+    text-shadow:
+        2px 3px 0 #000,
+        0 0 10px rgba(0,0,0,.5);
+}
+
+.note-arrow {
+    color: var(--punisher-red);
+
+    font-size: 65px;
+
+    margin-left: 95px;
+}
+
+
+/* =========================================================
+   WEAPON DETAIL
+========================================================= */
+
+.hero-weapon {
+    right: -10px;
+
+    bottom: -5px;
+
+    width: 390px;
+    height: 205px;
+
+    opacity: .76;
+
+    z-index: 5;
+
+    filter:
+        drop-shadow(0 15px 20px rgba(0,0,0,.9));
+}
+
+
+/* =========================================================
+   SIDE INDEX
+========================================================= */
+
+.side-index {
+    left: 35px;
+
+    top: 50%;
+
+    transform:
+        translateY(-28%);
+
+    z-index: 700;
+
+    gap: 20px;
+}
+
+.index-item {
+    color: rgba(255,255,255,.30);
+
+    font-size: 11px;
+
+    transition:
+        color .25s ease;
+}
+
+.index-item.active {
+    color: #fff;
+}
+
+.index-item.active::before {
+    background: var(--punisher-red);
+
+    box-shadow:
+        0 0 8px rgba(229,9,20,.35);
+}
+
+
+/* =========================================================
+   SECTION TRANSITION
+========================================================= */
+
+.origin {
+    position: relative;
+
+    border-top:
+        1px solid rgba(255,255,255,.22);
+
+    margin-top: 0;
+}
+
+.origin::before {
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+    left: 0;
+
+    width: 100%;
+    height: 90px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.15),
+            rgba(0,0,0,0)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MAKE LOWER SECTIONS FEEL LIKE SAME PHYSICAL WORLD
+========================================================= */
+
+.section-dark {
+    background:
+        linear-gradient(
+            rgba(3,3,3,.91),
+            rgba(3,3,3,.95)
+        ),
+        url("assets/punisher-hero.png") !important;
+
+    background-size: cover !important;
+
+    background-position: center !important;
+
+    background-attachment: fixed;
+
+    position: relative;
+}
+
+.section-dark::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(229,9,20,.055),
+            transparent 35%
+        );
+}
+
+
+/* Keep section content above texture */
+
+.section-dark > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   ARSENAL — LESS "UI CARD", MORE INDUSTRIAL
+========================================================= */
+
+.tool-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18,18,18,.76),
+            rgba(5,5,5,.92)
+        );
+
+    border-color:
+        rgba(255,255,255,.20);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+.tool-card:hover {
+    border-color:
+        rgba(229,9,20,.65);
+
+    transform:
+        translateY(-4px);
+}
+
+
+/* =========================================================
+   GRAIN — MORE NATURAL
+========================================================= */
+
+.noise {
+    opacity: .055 !important;
+
+    mix-blend-mode: overlay !important;
+}
+
+
+/* =========================================================
+   DESKTOP — PRECISE HERO BALANCE
+========================================================= */
+
+@media (min-width: 1201px) {
+
+    .hero-background {
+        background-position:
+            53% center !important;
+    }
+
+    .hero-content {
+        left: 9.2vw;
+    }
+
+    .hero-note {
+        right: 8.5vw;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .hero-content {
+        width: 52vw;
+    }
+
+    .hero h1 {
+        font-size: clamp(72px, 8vw, 110px);
+    }
+
+    .hero-note {
+        right: 4vw;
+        transform:
+            rotate(-6deg)
+            scale(.82);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .site-header {
+        height: 76px;
+
+        padding:
+            0 25px;
+    }
+
+    .brand-skull {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-skull img {
+        width: 37px;
+        height: 37px;
+    }
+
+    .hero {
+        min-height: 850px;
+    }
+
+    .hero-background {
+        background-position:
+            64% center !important;
+
+        filter:
+            grayscale(.2)
+            contrast(1.15)
+            brightness(.62);
+    }
+
+    .hero-overlay {
+        background:
+
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,.94) 0%,
+                rgba(0,0,0,.76) 50%,
+                rgba(0,0,0,.35) 100%
+            ),
+
+            linear-gradient(
+                180deg,
+                rgba(0,0,0,.45),
+                transparent 45%,
+                rgba(0,0,0,.75)
+            );
+    }
+
+    .hero-content {
+        left: 7vw;
+
+        top: 52%;
+
+        width: 84vw;
+
+        transform:
+            translateY(-40%);
+    }
+
+    .hero h1 {
+        font-size:
+            clamp(
+                65px,
+                13vw,
+                100px
+            );
+
+        line-height: .8;
+    }
+
+    .hero h2 {
+        font-size: 16px;
+
+        letter-spacing: 2.5px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+
+        max-width: 520px;
+    }
+
+    .hero-note {
+        display: none;
+    }
+
+    .hero-weapon {
+        opacity: .45;
+        transform: scale(.75);
+        transform-origin: bottom right;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .site-header {
+        height: 70px;
+
+        padding:
+            0 18px;
+    }
+
+    .brand-name strong {
+        font-size: 23px;
+    }
+
+    .brand-name small {
+        font-size: 6px;
+
+        letter-spacing: 3.5px;
+    }
+
+    .hire-button {
+        min-width: 105px;
+
+        height: 40px;
+
+        font-size: 9px;
+    }
+
+    .hero {
+        min-height: 800px;
+    }
+
+    .hero-content {
+        left: 25px;
+
+        width:
+            calc(100% - 50px);
+    }
+
+    .hero h1 {
+        font-size: 62px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero h2 {
+        margin-top: 27px;
+
+        font-size: 14px;
+
+        line-height: 1.65;
+
+        letter-spacing: 1.8px;
+    }
+
+    .hero-description {
+        margin-top: 18px;
+
+        font-size: 12.5px;
+
+        line-height: 1.65;
+    }
+
+    .hero-actions {
+        margin-top: 24px;
+
+        flex-direction: row;
+
+        width: auto;
+    }
+
+    .btn {
+        height: 50px;
+
+        padding:
+            0 18px;
+
+        font-size: 9px;
+    }
+}
+
+/* =========================================================
+   MAHMOUD PROFILE — CINEMATIC HERO PORTRAIT
+========================================================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   PROFILE CONTAINER
+========================================================= */
+
+.hero-profile {
+    position: absolute;
+
+    right: 8.5vw;
+    top: 50%;
+
+    width: 355px;
+    height: 505px;
+
+    transform:
+        translateY(-45%)
+        rotate(2deg);
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   RED ATMOSPHERIC GLOW
+========================================================= */
+
+.hero-profile-glow {
+    position: absolute;
+
+    inset: -55px;
+
+    z-index: -2;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(229, 9, 20, .30) 0%,
+            rgba(229, 9, 20, .12) 32%,
+            transparent 70%
+        );
+
+    filter: blur(35px);
+
+    opacity: .65;
+}
+
+
+/* =========================================================
+   PORTRAIT FRAME
+========================================================= */
+
+.hero-profile-frame {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #050505;
+
+    border:
+        1px solid rgba(235,235,235,.28);
+
+    box-shadow:
+
+        0 30px 70px
+        rgba(0,0,0,.75),
+
+        0 0 0 1px
+        rgba(0,0,0,.8),
+
+        18px 18px 0
+        rgba(0,0,0,.65);
+}
+
+
+/* =========================================================
+   PORTRAIT IMAGE
+========================================================= */
+
+.hero-profile-image {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+}
+
+
+.hero-profile-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    /*
+       Crop the original portrait slightly.
+       Keeps the face dominant while removing
+       unnecessary empty space.
+    */
+
+    object-position:
+        center 28%;
+
+    transform:
+        scale(1.045);
+
+    filter:
+        grayscale(.12)
+        contrast(1.13)
+        brightness(.70)
+        saturate(.82);
+
+    transition:
+        transform .8s cubic-bezier(.2,.7,.2,1),
+        filter .5s ease;
+}
+
+
+/* =========================================================
+   CINEMATIC IMAGE TREATMENT
+========================================================= */
+
+.hero-profile-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+
+        /*
+         Dark top
+        */
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.68) 0%,
+            rgba(0,0,0,.05) 30%,
+            rgba(0,0,0,.12) 60%,
+            rgba(0,0,0,.88) 100%
+        ),
+
+        /*
+         Left side blends into Punisher background
+        */
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.60) 0%,
+            rgba(0,0,0,.08) 35%,
+            transparent 70%
+        );
+}
+
+
+/* =========================================================
+   RED LIGHT ON EDGE
+========================================================= */
+
+.hero-profile-image::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(229,9,20,.9) 35%,
+            rgba(229,9,20,.35) 70%,
+            transparent
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(229,9,20,.35);
+}
+
+
+/* =========================================================
+   PROFILE LABEL
+========================================================= */
+
+.hero-profile-label {
+    position: absolute;
+
+    left: 24px;
+    bottom: 22px;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    color: #eeeae0;
+
+    text-shadow:
+        2px 3px 8px #000;
+}
+
+
+.hero-profile-label span {
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+
+.hero-profile-label small {
+    color:
+        var(--punisher-red);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+}
+
+
+/* =========================================================
+   INDUSTRIAL CORNER MARKS
+========================================================= */
+
+.hero-profile-frame::before,
+.hero-profile-frame::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+
+/* top-left */
+
+.hero-profile-frame::before {
+    top: 15px;
+    left: 15px;
+
+    width: 42px;
+    height: 42px;
+
+    border-top:
+        1px solid rgba(255,255,255,.55);
+
+    border-left:
+        1px solid rgba(255,255,255,.55);
+}
+
+
+/* bottom-right */
+
+.hero-profile-frame::after {
+    right: 15px;
+    bottom: 15px;
+
+    width: 42px;
+    height: 42px;
+
+    border-right:
+        1px solid rgba(229,9,20,.8);
+
+    border-bottom:
+        1px solid rgba(229,9,20,.8);
+}
+
+
+/* =========================================================
+   SMALL RED ID MARK
+========================================================= */
+
+.hero-profile-frame {
+    --profile-mark: "";
+}
+
+.hero-profile-frame .hero-profile-label::before {
+    content: "PROFILE / 01";
+
+    position: absolute;
+
+    bottom: 62px;
+    left: 0;
+
+    color:
+        rgba(238,235,226,.45);
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   HOVER — VERY SUBTLE
+========================================================= */
+
+.hero:hover .hero-profile-image img {
+    transform:
+        scale(1.06);
+}
+
+
+/* =========================================================
+   PROFILE PARALLAX
+========================================================= */
+
+@media (min-width: 901px) {
+
+    .hero-profile {
+        transition:
+            transform .25s ease-out;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+
+    .hero-profile {
+
+        right: 9vw;
+
+        width: 370px;
+        height: 525px;
+
+        transform:
+            translateY(-46%)
+            rotate(2deg);
+    }
+
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .hero-profile {
+
+        right: 5vw;
+
+        width: 300px;
+        height: 430px;
+
+        opacity: .90;
+
+        transform:
+            translateY(-42%)
+            rotate(2deg);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero-profile {
+
+        right: 6vw;
+
+        top: auto;
+        bottom: 55px;
+
+        width: 190px;
+        height: 270px;
+
+        transform:
+            rotate(2deg);
+
+        opacity: .72;
+    }
+
+
+    .hero-profile-glow {
+        inset: -35px;
+
+        opacity: .5;
+    }
+
+
+    .hero-profile-label {
+        left: 14px;
+        bottom: 14px;
+    }
+
+
+    .hero-profile-label span {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+
+    .hero-profile-label small {
+        font-size: 6px;
+        letter-spacing: 3px;
+    }
+
+
+    .hero-profile-frame::before {
+        top: 9px;
+        left: 9px;
+
+        width: 25px;
+        height: 25px;
+    }
+
+
+    .hero-profile-frame::after {
+        right: 9px;
+        bottom: 9px;
+
+        width: 25px;
+        height: 25px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero-profile {
+
+        right: 20px;
+
+        bottom: 28px;
+
+        width: 145px;
+        height: 205px;
+
+        opacity: .58;
+    }
+
+
+    .hero-profile-label {
+        display: none;
+    }
+
+
+    .hero-profile-frame::before,
+    .hero-profile-frame::after {
+        display: none;
+    }
+
+}
